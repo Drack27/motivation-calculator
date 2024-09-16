@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Motivation Calculator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to the SMART SANCTUM motivation calculator!</h1>
+    <p>Think of a goal for yourself and rate it in the following categories, then press 'calculate'.</p>
+    <p>Feel free to roleplay as someone else!</p>
+
+    <label><input type="checkbox" id="adhdMode" checked> ADHD Mode</label>
+
+    <label for="relevancy">Relevancy (1-10):</label>
+    <input type="text" id="relevancy">
+    <div class="definition">How well this goal aligns with your interests, values, & overall wellbeing. Higher is more relevant.</div>
+
+    <label for="specificity">Specificity (1-10):</label>
+    <input type="text" id="specificity">
+    <div class="definition">How clearly defined and targeted the goal is. Higher is more specific.</div>
+
+    <label for="attainability">Attainability (True/False):</label>
+    <input type="checkbox" id="attainability">
+    <div class="definition">Is this goal possible?</div>
+
+    <label for="actionability">Actionability (1-10):</label>
+    <input type="text" id="actionability">
+    <div class="definition">How often will you be able to take immediate action to progress? Higher is more actionable.</div>
+
+    <label for="novelty">Novelty (1-10):</label>
+    <input type="text" id="novelty">
+    <div class="definition">How unique or new is this experience for you? Higher is more novel.</div>
+
+    <label for="challenge">Challenge (1-10):</label>
+    <input type="text" id="challenge">
+    <div class="definition">How difficult is the goal? Higher is more challenging</div>
+
+    <label for="timeSpecificity">Time Specificity (1-10):</label>
+    <input type="text" id="timeSpecificity">
+    <div class="definition">How specific is the deadline? Higher is more time-specific.</div>
+
+    <label for="timeSensitivity">Time Sensitivity (1-10):</label>
+    <input type="text" id="timeSensitivity">
+    <div class="definition">If you miss the deadline, will there be non-arbitrary, unchangeable, & irreversable consequences? Higher is more time-sensitive.</div>
+
+    <label for="urgency">Urgency (1-10):</label>
+    <input type="text" id="urgency">
+    <div class="definition">How close is the deadline? Higher means the deadline is sooner.</div>
+
+    <label for="measurability">Measurability (1-10):</label>
+    <input type="text" id="measurability">
+    <div class="definition">How easy will it be to tell whether you've achieved the goal? Higher means more measurable.</div>
+
+    <button onclick="calculateMotivation()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
