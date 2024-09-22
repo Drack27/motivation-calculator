@@ -1,3 +1,4 @@
+console.log ("is this thing on?");
 function calculateMotivation() {
     // Get values from input fields
     let R = parseInt(document.getElementById('relevancy').value) || 0;
@@ -56,3 +57,38 @@ function calculateMotivation() {
         resultDiv.textContent = resultText;
     }
 }
+const categories = document.querySelectorAll('.category');
+
+categories.forEach(category => {
+  const label = category.querySelector('label');
+  const definition = category.querySelector('.definition');
+
+  // Check if it's a touch device
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    label.addEventListener('click', () => {
+      // Toggle visibility on click
+      if (definition.style.opacity === '1') {
+        console.log("get hekkin untapped");
+        definition.style.opacity = 0;
+        definition.style.transform = 'translateY(-10px)';
+      } else {
+        console.log("get hekkin tapped");
+        definition.style.opacity = 1;
+        definition.style.transform = 'translateY(0)';
+      }
+    });
+  } else {
+    // Keep the hover behavior for non-touch devices
+    label.addEventListener('mouseover', () => {
+      console.log("get hekkin moused");
+      definition.style.opacity = 1;
+      definition.style.transform = 'translateY(0)';
+    });
+
+    label.addEventListener('mouseout', () => {
+    console.log("bye mouse");
+      definition.style.opacity = 0;
+      definition.style.transform = 'translateY(-10px)';
+    });
+  }
+});
