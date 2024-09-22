@@ -60,35 +60,41 @@ function calculateMotivation() {
 const categories = document.querySelectorAll('.category');
 
 categories.forEach(category => {
-  const label = category.querySelector('label');
-  const definition = category.querySelector('.definition');
+    const label = category.querySelector('label');
+    const definition = category.querySelector('.definition');
 
-  // Check if it's a touch device
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    label.addEventListener('click', () => {
-      // Toggle visibility on click
-      if (definition.style.opacity === '1') {
-        console.log("get hekkin untapped");
-        definition.style.opacity = 0;
-        definition.style.transform = 'translateY(-10px)';
-      } else {
-        console.log("get hekkin tapped");
-        definition.style.opacity = 1;
-        definition.style.transform = 'translateY(0)';
-      }
-    });
-  } else {
-    // Keep the hover behavior for non-touch devices
-    label.addEventListener('mouseover', () => {
-      console.log("get hekkin moused");
-      definition.style.opacity = 1;
-      definition.style.transform = 'translateY(0)';
-    });
+    // Create a span to wrap the label text
+    const textSpan = document.createElement('span');
+    textSpan.textContent = label.textContent;
+    label.textContent = ''; // Clear the original text
+    label.appendChild(textSpan);
 
-    label.addEventListener('mouseout', () => {
-    console.log("bye mouse");
-      definition.style.opacity = 0;
-      definition.style.transform = 'translateY(-10px)';
-    });
-  }
+    // Check if it's a touch device
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        label.addEventListener('click', () => {
+            // Toggle visibility on click
+            if (definition.style.opacity === '1') {
+                definition.style.opacity = 0;
+                definition.style.transform = 'translateY(-10px)';
+                textSpan.style.backgroundColor = ''; // Reset background color
+            } else {
+                definition.style.opacity = 1;
+                definition.style.transform = 'translateY(0)';
+                textSpan.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; // Add highlight
+            }
+        });
+    } else {
+        // Hover behavior for non-touch devices
+        label.addEventListener('mouseover', () => {
+            definition.style.opacity = 1;
+            definition.style.transform = 'translateY(0)';
+            textSpan.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; 
+        });
+
+        label.addEventListener('mouseout', () => {
+            definition.style.opacity = 0;
+            definition.style.transform = 'translateY(-10px)';
+            textSpan.style.backgroundColor = ''; 
+        });
+    }
 });
