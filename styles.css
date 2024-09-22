@@ -1,11 +1,28 @@
+@font-face {
+    font-family: 'Alegreya';
+    src: url('fonts/Alegreya/static/Alegreya-Regular.ttf') format('truetype'); /* Adjust the path and format as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Example for Playfair Display */
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('truetype'); /* Adjust the path and format as needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1 {
-    text-align:center; 
+    font-family: 'Alegreya', serif;
+    text-align: center; 
  }
  p {
+    font-family: 'Alegreya', serif;
     text-align: center;
  }
 body {
-    font-family: sans-serif;
+    font-family: 'Playfair Display', serif;
     background-color: #222; /* Dark background */
     color: #eee; /* Light text color */
 }
