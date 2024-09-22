@@ -12,7 +12,9 @@
     font-weight: normal;
     font-style: normal;
 }
-
+.centerbutton {
+    text-align: center;
+  }
 h1 {
     font-family: 'Alegreya', serif;
     text-align: center; 

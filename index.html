@@ -10,15 +10,26 @@
 <body>
 
 <div class="container">
-    <h1>Motivation Calculator!</h1>
-    <p>V1.1</p>
-    <p>Think of a goal you or someone else has, then rate it in the following categories. Then press 'calculate'.</p>
-    <p>If you aren't sure what a category means or how to rate it, hover over it's name.</p>
+    <h1>Motivation Calculator v1.1</h1>
+    <div class="centerbutton">
+        <button onclick="window.location.href='https://www.patreon.com/brainvacationstudios/membership';">Support Me on Patreon!</button>
+    </div>
+    
+    <p>Think of a goal you or someone else has. Then rate it in each of the following areas, ticking/unticking boxes or on a scale of 1-10. Then press 'calculate'.</p>
+    <p>Hover over the names of the categories to see what they mean.</p>
 
     <div class="category">
         <label for="adhdMode">ADHD Mode</label>
+        <div class="definition">ADHD mode adds Novelty, Challenge, and Urgency to the equation. </div>
         <input type="checkbox" id="adhdMode" unchecked> 
     </div>
+
+    <div class="category">
+        <label for="attainability">Attainability</label>
+        <div class="definition">Is this goal possible?</div>
+        <input type="checkbox" id="attainability">
+    </div>
+
 
     <div class="category">
         <label for="relevancy">Relevancy (1-10):</label>
@@ -30,12 +41,6 @@
         <label for="specificity">Specificity (1-10):</label>
         <div class="definition">How clearly defined and targeted the goal is. Higher is more specific.</div>
         <input type="text" id="specificity">
-    </div>
-    
-    <div class="category">
-        <label for="attainability">Attainability (True/False):</label>
-        <div class="definition">Is this goal possible?</div>
-        <input type="checkbox" id="attainability">
     </div>
     
     <div class="category">
@@ -81,12 +86,12 @@
         <input type="text" id="measurability">
     </div>
     
-
-    <button onclick="calculateMotivation()">Calculate</button>
-
+    <div class="centerbutton">
+        <button onclick="calculateMotivation()">Calculate</button>
+    </div>
     <div id="result"></div>
 </div>
-
+<p>By Brain Vacation Studios</p>
 <script src="script.js"></script>
 
 </body>
